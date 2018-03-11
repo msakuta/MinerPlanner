@@ -226,7 +226,7 @@ end
 function show_chest_picker(player)
         local items = {}
         for key, proto in pairs(game.entity_prototypes)  do
-            if  string.match(key, "chest")  then
+            if  string.match(key, "chest") and key ~= "blue-chest" and key ~= "red-chest"  then
        
                 if not is_blacklisted(key) and ( not research_only or  is_entity_researched(player, proto)) then
                     table.insert(items, key)
